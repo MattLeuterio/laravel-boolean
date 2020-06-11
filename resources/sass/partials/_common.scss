@@ -1,0 +1,15 @@
+// Commons
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background: #fff;
+    color: $blue;
+}
+
+a {
+    @include reset-a;
+}
+
+ul {
+    @include reset-list;
+}

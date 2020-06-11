@@ -1,1 +1,13 @@
-//
+// Common
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/common';
+
+//partials
+@import 'partials/header';
+@import 'partials/footer';
+
+//pages 
+@import 'partials/home';
+@import 'partials/students';
+@import 'partials/students-show';
