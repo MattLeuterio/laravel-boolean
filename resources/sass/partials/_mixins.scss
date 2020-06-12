@@ -1,5 +1,12 @@
 // MIXINS
 
+
+@mixin responsive ($width: $desktop){
+    @media (max-width: $width){
+      @content;
+    }
+}
+
 @mixin reset-list {
     margin: 0;
     padding: 0;

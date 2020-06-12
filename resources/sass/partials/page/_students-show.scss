@@ -1,0 +1,72 @@
+.students-container {
+    background: $gray;
+    padding: 50px 20px;
+
+    h2 {
+        text-align: center;
+    }
+
+    .row.student {
+        @include flex(row, center, center);
+    }
+    
+}
+
+.student {
+    @include flex(row, space-between, flex-start);
+    flex-wrap: wrap;
+    padding: 50px 50px;
+    
+    .cardstud {
+        width: 60%;
+        min-width: 350px;
+        min-height: 300px;
+        @include flex(column, center, center);
+        background: #fff;
+        padding: 10px 50px;
+        margin-bottom: 20px;
+
+       
+
+        &-info {
+            @include flex(row, space-between, center);
+
+            @include responsive($tablet) {
+                @include flex(column, space-between, center);
+            }
+
+            img {
+                width: 200px;
+            }
+    
+            ul {
+
+                margin-left: 20px;
+                li {
+    
+                    h3 {
+                        font-size: 34px;
+                        font-weight: 300;
+                    }
+    
+                    h4 {
+                        font-size: 14px;
+                    }
+                    
+                }
+                
+            }
+
+        }
+
+        &-descr {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+    
+    &:hover {
+        text-decoration: none;
+    }
+
+}

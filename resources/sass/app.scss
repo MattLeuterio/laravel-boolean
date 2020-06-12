@@ -3,11 +3,13 @@
 @import 'partials/mixins';
 @import 'partials/common';
 
-//partials
-@import 'partials/header';
-@import 'partials/footer';
+//components
+@import 'partials/components/header';
+@import 'partials/components/footer';
 
 //pages 
-@import 'partials/home';
-@import 'partials/students';
-@import 'partials/students-show';
+@import 'partials/page/home';
+@import 'partials/page/students';
+@import 'partials/page/students-show';
+@import 'partials/page/privacy';
+@import 'partials/page/faq';

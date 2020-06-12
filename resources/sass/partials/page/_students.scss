@@ -2,8 +2,36 @@
     background: $gray;
     padding: 50px 20px;
 
-    h2 {
+    h1 {
         text-align: center;
+    }
+
+    .students-filter {
+
+        margin-top: 25px;
+        .container {
+
+            .row {
+                @include flex(row, center, center);
+
+                select {
+                    width: 80px;
+                    height: 25px;
+                    font-size: 14px;
+                    border: 0;
+                    border-radius: 3px;
+                    color: $blue;
+                    
+                    &:focus {
+                        outline: none;
+                    }
+                    option {
+                        border: 0;
+                    }
+                }
+
+            }
+        }        
     }
     
 }
@@ -14,8 +42,13 @@
     flex-wrap: wrap;
     padding: 50px 20px;
 
-    .student {
+    @include responsive($tablet) {
+        @include flex(column, center, center);
+    }
+
+    a {
         width: 48%;
+        min-width: 350px;
         .cardstud {
             @include flex(column, space-between, flex-start);
             background: #fff;

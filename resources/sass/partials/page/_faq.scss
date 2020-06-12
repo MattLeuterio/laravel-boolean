@@ -1,0 +1,66 @@
+.faq-container {
+    
+    .faq-header {
+        padding: 50px 80px;
+
+        h2 {
+            font-size: 44px;
+        }
+    }
+
+    .faq-main {
+        min-height: 400px;
+        @include flex;
+
+        &--prima,
+        &--dopo {
+            width: 50%;
+            height: 100%;
+            padding: 50px 60px;
+        }
+
+        &--prima {
+            background: $gray;
+        }
+
+        &--dopo {
+            background: $blue;
+            color: #fff;
+        }
+
+        h3 {
+            font-size: 32px;
+        }
+
+        .question {
+            @include flex($just: space-between);
+
+            &-text {
+                
+                p {
+                    font-size: 24px;
+                }
+            }
+
+            &-cta {
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.answer {
+    margin-bottom: 30px;
+
+    p {
+        font-size: 18px;
+        overflow: hidden;
+        transition: height .8s;
+        display: none;
+    }
+}
+
+.answer > p.answer-visible {
+    height: 100%;
+}

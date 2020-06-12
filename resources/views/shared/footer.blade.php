@@ -12,12 +12,15 @@
             <div class="row right">
                 <ul>
                     <li><a href="{{ route('static-pages.home') }}">Home</a></li>
-                    <li><a href="">Domande frequenti</a></li>
-                    <li><a href="">Privacy</a></li>
+                    <li><a href=" {{ route('static-pages.faq') }}">Domande frequenti</a></li>
+                <li><a href=" {{ route('static-pages.privacy') }} ">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
+
+{{-- Scripts --}}
+@yield('scripts')
 </body>
 </html>

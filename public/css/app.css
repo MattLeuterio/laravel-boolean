@@ -160,6 +160,34 @@ ul li.nav-item a:hover {
   text-align: center;
 }
 
+.students-container .students-filter {
+  margin-top: 25px;
+}
+
+.students-container .students-filter .container .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.students-container .students-filter .container .row select {
+  width: 80px;
+  height: 25px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 3px;
+  color: #1b3c59;
+}
+
+.students-container .students-filter .container .row select:focus {
+  outline: none;
+}
+
+.students-container .students-filter .container .row select option {
+  border: 0;
+}
+
 .students {
   display: flex;
   flex-direction: row;
@@ -169,8 +197,18 @@ ul li.nav-item a:hover {
   padding: 50px 20px;
 }
 
+@media (max-width: 768px) {
+  .students {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .students a {
   width: 48%;
+  min-width: 350px;
 }
 
 .students a .cardstud {
@@ -225,59 +263,165 @@ ul li.nav-item a:hover {
   text-align: center;
 }
 
-.students {
+.students-container .row.student {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.student {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 50px 20px;
+  padding: 50px 50px;
 }
 
-.students .student {
-  width: 48%;
-}
-
-.students .student .cardstud {
+.student .cardstud {
+  width: 60%;
+  min-width: 350px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   background: #fff;
-  padding: 10px;
+  padding: 10px 50px;
   margin-bottom: 20px;
 }
 
-.students .student .cardstud-info {
+.student .cardstud-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .student .cardstud-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.student .cardstud-info img {
+  width: 200px;
+}
+
+.student .cardstud-info ul {
+  margin-left: 20px;
+}
+
+.student .cardstud-info ul li h3 {
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.student .cardstud-info ul li h4 {
+  font-size: 14px;
+}
+
+.student .cardstud-descr {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.student:hover {
+  text-decoration: none;
+}
+
+.privacy-container .privacy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.privacy-container .privacy .row {
+  width: 80%;
+  font-weight: 300;
+}
+
+.privacy-container .privacy .row h2 {
+  font-weight: 400;
+}
+
+.privacy-container .privacy .row h3 {
+  font-size: 20px;
+}
+
+.privacy-container .privacy .row p {
+  margin: 10px 0;
+}
+
+.faq-container .faq-header {
+  padding: 50px 80px;
+}
+
+.faq-container .faq-header h2 {
+  font-size: 44px;
+}
+
+.faq-container .faq-main {
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.faq-container .faq-main--prima,
+.faq-container .faq-main--dopo {
+  width: 50%;
+  height: 100%;
+  padding: 50px 60px;
+}
+
+.faq-container .faq-main--prima {
+  background: #e8ebf1;
+}
+
+.faq-container .faq-main--dopo {
+  background: #1b3c59;
+  color: #fff;
+}
+
+.faq-container .faq-main h3 {
+  font-size: 32px;
+}
+
+.faq-container .faq-main .question {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.students .student .cardstud-info img {
-  width: 100px;
+.faq-container .faq-main .question-text p {
+  font-size: 24px;
 }
 
-.students .student .cardstud-info ul {
-  margin-left: 20px;
+.faq-container .faq-main .question-cta {
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.students .student .cardstud-info ul li h3 {
+.answer {
+  margin-bottom: 30px;
+}
+
+.answer p {
   font-size: 18px;
-  font-weight: 700;
+  overflow: hidden;
+  transition: height 0.8s;
+  display: none;
 }
 
-.students .student .cardstud-info ul li h4 {
-  font-size: 14px;
-}
-
-.students .student .cardstud-descr {
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.students .student:hover {
-  text-decoration: none;
+.answer > p.answer-visible {
+  height: 100%;
 }
 
