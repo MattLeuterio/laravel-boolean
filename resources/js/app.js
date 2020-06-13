@@ -2,7 +2,7 @@ require('./bootstrap');
 
 $(document).ready(function () {
     
-    console.log('js ok, solo section studenti');
+    console.log('js ok');
     
     // Setup
     const filter = $('#filter'),
@@ -11,13 +11,27 @@ $(document).ready(function () {
           qaCta = $('.qa-cta');
           
           
-    // qaCta.click( function() {
-    //     let thisAnswer = $(this).parents('.question').next('.answer').children('.answer-p');
-    //     thisAnswer.addClass('active');
+    qaCta.click( function() {
+        let thisAnswer = $(this).parents('.question-text').next('.answer')
+        let activeAnswer = $(this).parents('.faq-section').find('.answer.visible');
+    
+        
+        if(!thisAnswer.hasClass('visible')){
+
+            activeAnswer.removeClass('visible');
+            thisAnswer.toggleClass('visible');
+
+        } else {
+
+            thisAnswer.removeClass('visible');
+
+        }
+        
+        
 
 
 
-    // });
+    });
           
 
     //console.log(apiUrl);
@@ -28,8 +42,6 @@ $(document).ready(function () {
     filter.on('change', function() {
         let gender = $(this).val();
 
-        console.log(gender);
-
         $.ajax({
             url: apiUrl,
             method: 'POST',
@@ -39,7 +51,6 @@ $(document).ready(function () {
         })
         .done(function(res){
             if(res.response.length > 0) {
-                console.log(res.response);
                 
                 //clean
                 containerStudent.html('');

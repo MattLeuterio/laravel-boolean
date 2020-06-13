@@ -16090,22 +16090,28 @@ module.exports = g;
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 $(document).ready(function () {
-  console.log('js ok, solo section studenti'); // Setup
+  console.log('js ok'); // Setup
 
   var filter = $('#filter'),
       apiUrl = window.location.protocol + '//' + window.location.host + '/api/students/genders',
       containerStudent = $('.students'),
-      qaCta = $('.qa-cta'); // qaCta.click( function() {
-  //     let thisAnswer = $(this).parents('.question').next('.answer').children('.answer-p');
-  //     thisAnswer.addClass('active');
-  // });
-  //console.log(apiUrl);
+      qaCta = $('.qa-cta');
+  qaCta.click(function () {
+    var thisAnswer = $(this).parents('.question-text').next('.answer');
+    var activeAnswer = $(this).parents('.faq-section').find('.answer.visible');
+
+    if (!thisAnswer.hasClass('visible')) {
+      activeAnswer.removeClass('visible');
+      thisAnswer.toggleClass('visible');
+    } else {
+      thisAnswer.removeClass('visible');
+    }
+  }); //console.log(apiUrl);
 
   var source = $('#student-template').html();
   var template = Handlebars.compile(source);
   filter.on('change', function () {
     var gender = $(this).val();
-    console.log(gender);
     $.ajax({
       url: apiUrl,
       method: 'POST',
@@ -16114,8 +16120,7 @@ $(document).ready(function () {
       }
     }).done(function (res) {
       if (res.response.length > 0) {
-        console.log(res.response); //clean
-
+        //clean
         containerStudent.html('');
 
         for (var i = 0; i < res.response.length; i++) {

@@ -378,6 +378,7 @@ ul li.nav-item a:hover {
 .faq-container .faq-main--dopo {
   width: 50%;
   height: 100%;
+  min-height: 700px;
   padding: 50px 60px;
 }
 
@@ -392,9 +393,18 @@ ul li.nav-item a:hover {
 
 .faq-container .faq-main h3 {
   font-size: 32px;
+  margin-bottom: 50px;
 }
 
 .faq-container .faq-main .question {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.faq-container .faq-main .question-text {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -405,6 +415,20 @@ ul li.nav-item a:hover {
   font-size: 24px;
 }
 
+.faq-container .faq-main .question-text .qa-cta.active {
+  display: block;
+}
+
+.faq-container .faq-main .question-text .qa-cta {
+  cursor: pointer;
+  font-size: 24px;
+  display: none;
+}
+
+.faq-container .faq-main .question-text .qa-cta:hover {
+  color: inherit;
+}
+
 .faq-container .faq-main .question-cta {
   font-size: 24px;
   cursor: pointer;
@@ -412,16 +436,13 @@ ul li.nav-item a:hover {
 
 .answer {
   margin-bottom: 30px;
-}
-
-.answer p {
   font-size: 18px;
   overflow: hidden;
+  max-height: 0;
   transition: height 0.8s;
-  display: none;
 }
 
-.answer > p.answer-visible {
-  height: 100%;
+.answer.visible {
+  max-height: 100px;
 }
 

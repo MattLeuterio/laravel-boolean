@@ -16,6 +16,7 @@
         &--dopo {
             width: 50%;
             height: 100%;
+            min-height: 700px;
             padding: 50px 60px;
         }
 
@@ -30,15 +31,31 @@
 
         h3 {
             font-size: 32px;
+            margin-bottom: 50px;
         }
 
         .question {
-            @include flex($just: space-between);
+            @include flex(column);
 
             &-text {
-                
+                width: 100%;
+                @include flex($just: space-between);
                 p {
                     font-size: 24px;
+                }
+
+                .qa-cta.active {
+                    display: block;
+                }
+
+                .qa-cta {
+                    cursor: pointer;
+                    font-size: 24px;
+                    display: none;
+
+                    &:hover {
+                        color: inherit;
+                    }
                 }
             }
 
@@ -52,15 +69,14 @@
 
 .answer {
     margin-bottom: 30px;
+    font-size: 18px;
+    overflow: hidden;
+    max-height: 0;
+    transition: height .8s;
 
-    p {
-        font-size: 18px;
-        overflow: hidden;
-        transition: height .8s;
-        display: none;
-    }
 }
 
-.answer > p.answer-visible {
-    height: 100%;
+
+.answer.visible {
+    max-height: 100px;
 }

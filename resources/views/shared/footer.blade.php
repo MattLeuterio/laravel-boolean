@@ -12,7 +12,7 @@
             <div class="row right">
                 <ul>
                     <li><a href="{{ route('static-pages.home') }}">Home</a></li>
-                    <li><a href=" {{ route('static-pages.faq') }}">Domande frequenti</a></li>
+                    <li><a href=" {{ route('faq') }}">Domande frequenti</a></li>
                 <li><a href=" {{ route('static-pages.privacy') }} ">Privacy Policy</a></li>
                 </ul>
             </div>
